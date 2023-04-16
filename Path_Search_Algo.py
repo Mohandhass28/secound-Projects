@@ -1,9 +1,7 @@
 import maze
-
 class path(object):
     def __init__(self,maze):
         self.maze = maze
-
     def find_path(self):
         maze = self.maze
         end = 'x'
@@ -56,9 +54,11 @@ class path(object):
         maxe = self.maze
         for r,c in path:
             maxe[r][c] = '@'
-        for i in maxe:
-            print(i)
+        return maxe
 
 
 s = path(maze.maze)
 p = s.find_path()
+# s.find_path()
+for i in p:
+    print(i)
