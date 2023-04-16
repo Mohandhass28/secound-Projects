@@ -51,6 +51,7 @@ class path(object):
         return naighbour
 
     def printpath(self,path):
+
         maxe = self.maze
         for r,c in path:
             maxe[r][c] = '@'
@@ -59,6 +60,5 @@ class path(object):
 
 s = path(maze.maze)
 p = s.find_path()
-# s.find_path()
 for i in p:
     print(i)

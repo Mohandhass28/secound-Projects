@@ -1,8 +1,6 @@
 class Sudoku:
     def __init__(self,mat):
         self.mat = mat
-        self.count = 0
-
 
     def Back_tracking(self):
         mat = self.mat
@@ -18,10 +16,10 @@ class Sudoku:
                     return True
                 mat[r][c] = '.'
 
-
     def row(self,rowc,i):
         mat = self.mat
         row,col = rowc
+
         def dfs(r,c):
             if mat[r][c] == i:
                 return False
@@ -30,12 +28,9 @@ class Sudoku:
             return dfs(r+1,c)
         return dfs(0,col)
 
-        
     def print(self):
         for i in self.mat:
             print(i)
-
-
 
     def colume(self,col,i):
         mat = self.mat
