@@ -75,11 +75,8 @@ board =  [["5","3",".",".","7",".",".",".","."],
          [".",".",".",".","8",".",".","7","9"]]
 
 s = Sudoku(board)
-# for i in s.mat:
-#     print(i)
-# print()
 s.Back_tracking()
-# s.print()
+
 
 
 
