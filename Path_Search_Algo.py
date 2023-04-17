@@ -68,8 +68,7 @@ maze = [
     ["#", " ", " ", " ", " ", " ", " ", " ", "#"],
     ["#", "#", "#", "#", "#", "#", "#", "x", "#"]
 ]
+if __name__ == "__main__":
+    s = path(maze).find_path()
+    print(s)
 
-s = path(maze)
-p = s.find_path()
-for i in p:
-    print(i)
