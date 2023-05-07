@@ -1,4 +1,4 @@
-class Solution(object):
+class NQUEEN(object):
     def solveNQueens(self, n):
         leftdig = set()
         rightdig = set()
@@ -28,18 +28,19 @@ class Solution(object):
         backtrack(0)
         return out
 
+    # CHECKING ROW FOR THE QUEEN
     def cherow(self, row, col, boad):
         for i in range(len(boad)):
             if boad[i][col] == 'Q':
                 return False
         return True
-
+    #CHECKING COLUMN FOR THE QUEEN
     def checol(self, row, col, boad):
         for i in range(len(boad)):
             if boad[row][i] == 'Q':
                 return False
         return True
 
-s = Solution()
+s = NQUEEN()
 l = s.solveNQueens(4)
 print(l)

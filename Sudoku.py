@@ -2,6 +2,7 @@ class Sudoku:
     def __init__(self,mat):
         self.mat = mat
 
+    #THE MANI BACKTRACK ALGO
     def Back_tracking(self):
         mat = self.mat
         rc = self.getemty()
@@ -16,10 +17,11 @@ class Sudoku:
                     return True
                 mat[r][c] = '.'
 
+
+    #CHECKING IN COLUMN FOR I
     def row(self,rowc,i):
         mat = self.mat
         row,col = rowc
-
         def dfs(r,c):
             if mat[r][c] == i:
                 return False
@@ -32,6 +34,9 @@ class Sudoku:
         for i in self.mat:
             print(i)
 
+
+    #CHECKING COLUMN FOR I
+    # I IS THE GET BY BACKTRACKING FUNCTION
     def colume(self,col,i):
         mat = self.mat
         row,co = col
@@ -43,7 +48,7 @@ class Sudoku:
             return dfs(r,c+1)
         return dfs(row,0)
 
-
+    #CHECKING THE 3X3 MATRIX FOR I
     def mate(self,rc,i):
         mat = self.mat
         r,c = rc
@@ -55,6 +60,7 @@ class Sudoku:
                     return False
         return True
 
+    #FINDING THE EMPTY ROW AND COLUMN IN THE BOAD
     def getemty(self):
         mat = self.mat
         for i in range(len(mat)):

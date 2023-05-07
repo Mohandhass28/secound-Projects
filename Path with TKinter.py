@@ -1,6 +1,7 @@
+from tkinter import *
+
 import Path_Search_Algo
 from Path_Search_Algo import *
-from tkinter import *
 
 gri = Path_Search_Algo.maze
 T = Tk()
@@ -21,11 +22,11 @@ def paceg():
 def start_agin():
     fun()
 
-start = Button(T,text='Start',padx=30,pady=2,command=lambda :start_agin())\
-    .grid(row=10,column=7,padx=10,pady=10,columnspan=9)
+# start = Button(T,text='Start',padx=30,pady=2,command=lambda :start_agin())\
+#     .grid(row=10,column=7,padx=10,pady=10,columnspan=9)
 
 
-button = Button(T,text='Next',padx=30,pady=2,command=lambda :paceg())\
+button = Button(T,text='Next',padx=30,pady=2,command=paceg)\
     .grid(row=10,column=0,pady=10,padx=10,columnspan=9)
 
 

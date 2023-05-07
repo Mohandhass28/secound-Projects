@@ -14,31 +14,48 @@ class Solution(object):
             return False
         ro,co = roco
         def Dfs(ind, row, col, word):
+            #CHECKING THE WORD IS COMPLITED
             if ind == len(word):
                 return True
+
             if col > collen:
                 return False
+
             elif row > rowlen:
                 return False
+
             elif col < 0:
                 return False
+
             elif row < 0:
                 return False
+
             elif board[row][col] != word[ind]:
                 return False
+
             self.boad[row][col] = '#'
             ans = (
+                # CHECKING DOWN FOR THE NEXT LETTER
                 Dfs(ind + 1, row + 1, col, word) or
+
+                # CHECKING UP FOR THE NEXT LETTER
                 Dfs(ind + 1, row - 1, col, word) or
+
+                # CHECKING RIGHT FOR THE NEXT LETTER
                 Dfs(ind + 1, row, col + 1, word) or
+
+                # CHECKING LEFT FOR THE NEXT LETTER
                 Dfs(ind + 1, row, col - 1, word)
             )
             self.boad[row][col] = word[ind]
             return ans
+
         if Dfs(0,ro,co,word):
             return True
         return self.exist(self.boad,word)
 
+
+    #FINDING THE FIRST LETTER IN THE BOAD
     def findword(self, word):
         Dp = self.Dp
         boad = self.boad
