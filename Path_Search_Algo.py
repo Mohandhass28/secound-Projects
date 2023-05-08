@@ -1,9 +1,9 @@
 import time
 class path(object):
-    def __init__(self,maze):
+    def __init__(self):
+        self.maze = None
+    def find_path(self,maze,stdscr=None,c1=None,c2=None,K=False):
         self.maze = maze
-    def find_path(self,stdscr=None,c1=None,c2=None,K=False):
-        maze = self.maze
         end = 'x'
         qoueu = []
         star_pos = self.find_start()
@@ -12,7 +12,7 @@ class path(object):
         qoueu.append((star_pos,path))
         visit = set()
         while len(qoueu) != 0:
-            po = qoueu.pop()
+            po = qoueu.pop(0)
             rowcol,path = po
             r,c = rowcol
             if K:
@@ -72,7 +72,7 @@ class path(object):
 
 
 
-maze = [
+maz = [
     ["#", "O", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#"],
     ["#", " ", " ", " ", " ", " ", "#", " ", " ", " ", " ", "x"],
     ["#", " ", "#", "#", " ", "#", "#", " ", " ", "#", "#", "#"],
@@ -96,6 +96,6 @@ maze = [
 
 ]
 if __name__ == "__main__":
-    s = path(maze).find_path()
+    s = path().find_path(maz)
 
 

@@ -1,9 +1,9 @@
 from tkinter import *
 
 import Path_Search_Algo
-from Path_Search_Algo import *
+import maze
 
-gri = Path_Search_Algo.maze
+gri = maze.maz
 T = Tk()
 def fun():
     for i in range(len(gri)):
@@ -13,7 +13,7 @@ def fun():
 fun()
 
 def paceg():
-    getpath = Path_Search_Algo.path(maze).find_path()
+    getpath = Path_Search_Algo.path().find_path(gri)
     fun()
     r,c = getpath.pop(0)
     Label(T, text='*',pady=20,padx=20,font=20000)\
